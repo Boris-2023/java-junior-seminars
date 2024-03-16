@@ -101,7 +101,7 @@ public class Homework {
     public static List<Person> findFirstPersons(List<Person> persons) {
         return persons.stream()
                 .filter(x -> x.getAge() < 30)
-                .filter((x -> x.getSalary() > 50_000))
+                .filter(x -> x.getSalary() > 50_000)
                 .limit(10)
                 .toList();
     }
