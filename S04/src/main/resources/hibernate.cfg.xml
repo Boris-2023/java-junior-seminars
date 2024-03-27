@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!--        DB's url for connection-->
+        <property name="hibernate.connection.url">jdbc:h2:mem:test</property>
+<!--        path to the Driver class in external dependencies for h2-->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+<!--        login to DB-->
+        <property name="hibernate.connection.username">sa</property>
+<!--        password for DB login-->
+        <property name="hibernate.connection.password"></property>
+<!--    auto action on Hiber's start/finish: none, create (hiber finds all entities mapped and create corresp schemas, tables),
+        create-drop (same + dropping on finish), update (create on start or update if changed,
+        validate (checks if DB matches Classes mapped, if not - Exception))-->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+<!--        SQL requests will be added to Java console log-->
+        <property name="show_sql">true</property>
+
+        <!-- List of XML mapping files -->
+<!--        <mapping package="org.example"/>-->
+        <mapping class="org.example.Person"/>
+        <mapping class="org.example.Department"/>
+
+    </session-factory>
+</hibernate-configuration>
